@@ -1,0 +1,11 @@
+App\Entity\Event:
+    attributes:
+        filters: [ 'event.order_filter' ]
+
+    graphql:
+        item_query:
+            description: 'Query для получение информации по событию'
+            
+        collection_query:
+            collection_query: App\Resolver\Query\BaseCollectionResolver
+            description: 'Query для получения коллекции событий'

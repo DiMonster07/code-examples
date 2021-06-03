@@ -1,0 +1,12 @@
+App\Entity\Actor:
+    attributes:
+        filters: ['actor.order_filter']
+
+    graphql:
+        item_query:
+            description: 'Query для получения информации по актёру для страницы актёра'
+            
+        collection_query:
+            pagination_enabled: false
+            filters: ['actor.order_filter']
+            description: 'Query для получения всех актеров(по умолчанию отсортированы по возрастанию id)'

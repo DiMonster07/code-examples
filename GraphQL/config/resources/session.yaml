@@ -1,0 +1,25 @@
+App\Entity\Session:
+    attributes:
+        filters: [ 'session.date_filter', 'session.future_filter' ]
+
+    graphql:
+        item_query:
+            description: 'Query для получения информации по одному сеансу'
+
+        collection_query:
+            description: 'Query для получения коллекции сеансов (есть пагинация)'
+
+        notPaginated:
+            collection_query: App\Resolver\Query\BaseCollectionResolver
+            pagination_enabled: false
+            description: 'Query для получения коллекции сеансов (без пагинации)'
+
+        mainBlockOfMainPageQuery:
+            collection_query: App\Resolver\Query\BaseCollectionResolver
+            pagination_enabled: false
+            description: 'Query для получения сеансов для главного блока на главной странице (по умолчанию отсортированы по возрастанию kinoplanSessionDate)'
+
+        playbillBlockQuery:
+            collection_query: App\Resolver\Query\BaseCollectionResolver
+            description: 'Query для получения сеансов для блока афиши (страница афиши и главная)'
+

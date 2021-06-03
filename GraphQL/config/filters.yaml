@@ -1,0 +1,52 @@
+services:
+    session.date_filter:
+        parent: 'api_platform.doctrine.orm.date_filter'
+        arguments:
+            - { kinoplanSessionDate: ~ }
+        tags:
+            - { name: 'api_platform.filter' }
+
+    session.future_filter:
+        parent: App\Filter\FutureSessionsFilter
+        tags:
+            - { name: 'api_platform.filter' }
+
+    actor.order_filter:
+        parent: 'api_platform.doctrine.orm.order_filter'
+        arguments:
+            - { lastname: ~ }
+        tags:
+            - { name: 'api_platform.filter' }
+
+    press.order_filter:
+        parent: 'api_platform.doctrine.orm.order_filter'
+        arguments:
+            - { publishedAt: ~ }
+        tags:
+            - { name: 'api_platform.filter' }
+
+    spectacle.sorted_by_sessions_filter:
+        parent: App\Filter\SpectaclesSortedBySessionsFilter
+        tags:
+            - { name: 'api_platform.filter' }
+
+    spectacle.order_filter:
+        parent: 'api_platform.doctrine.orm.order_filter'
+        arguments:
+            - { kinoplanName: ~ }
+        tags:
+            - { name: 'api_platform.filter' }
+
+    vacancy.order_filter:
+        parent: 'api_platform.doctrine.orm.order_filter'
+        arguments:
+            - { id: ~ }
+        tags:
+            - { name: 'api_platform.filter' }
+
+    event.order_filter:
+        parent: 'api_platform.doctrine.orm.order_filter'
+        arguments:
+            - { date: ~ }
+        tags:
+            - { name: 'api_platform.filter' }

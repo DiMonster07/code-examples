@@ -1,0 +1,9 @@
+App\Entity\Press:
+    attributes:
+        filters: ['press.order_filter']
+
+    graphql:
+        latestOfMainPageQuery:
+            collection_query: App\Resolver\Query\BaseCollectionResolver
+            description: 'Query для получения 4 свежих прессы(по умолчанию отсортированы по убыванию publishedAt)'
+            pagination_enabled: false
